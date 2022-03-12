@@ -12,8 +12,15 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('team_data')
 
-team_data = SHEET.worksheet('Team Data')
+def collect_data():
+    """
+    collects data input by the user
+    """
+    print('Please enter each teams data from the last calendar month, starting with team 1.')
+    print("Don't forget to separate each piece of data with a comma.")
+    print("For example: 25, 42, 44, 15, 25\n")
 
-data = team_data.get_all_values()
+    user_data = input('Enter data here: ')
+    print(f'Confirmation of data: {user_data}')
 
-print(data)
+collect_data()
