@@ -12,6 +12,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('team_data')
 
+
 def collect_data():
     """
     collects data input by the user, and if valid, returns confirmation of data. 
@@ -27,6 +28,9 @@ def collect_data():
         if validate_data(input_data):
             print(f'Confirmation of data: {input_data}')
             break
+    
+    return input_data
+
 
 def validate_data(values):
     """
@@ -45,4 +49,33 @@ def validate_data(values):
     
     return True
 
-collect_data()
+
+def update_worksheet(data, worksheet):
+    """
+    Updates worksheet with data input by the user.
+    """
+    print('Updating worksheet with data provided...')
+    updating_worksheet = SHEET.worksheet(worksheet)
+    updating_worksheet.append_row(data)
+    print(f'{worksheet} worksheet successfully updated!\n')
+
+# def calculate_percentage():
+#     """
+#     Pulls percentage change data from worksheet and display it to the user.
+#     """
+#     percentage_data = SHEET.worksheet('PercentageChange').get_all_values()
+#     percentage_to_display = percentage_data[-1]
+#     print(f'The over all percentage fluctation across all teams is {percentage_to_display}')
+
+def run_program():
+    """
+    Runs all functions.
+    """
+    print('Welcome to my Python Project...\n')
+    data = collect_data()
+    input_data = [int(num) for num in data]
+    update_worksheet(input_data, "TeamData")
+    calculate_percentage()
+
+
+run_program()
