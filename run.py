@@ -15,38 +15,38 @@ SHEET = GSPREAD_CLIENT.open('team_data')
 
 def collect_data():
     """
-    collects data input by the user, and if valid, returns confirmation of data. 
+    collects data input by the user, and if valid,
+    returns confirmation of data.
     """
     while True:
-        print('Please enter each teams data from the last calendar month, starting with team 1.')
+        print('Please enter each teams data from the last calendar')
+        print('month, starting with team 1.')
         print("Don't forget to separate each piece of data with a comma.")
         print("For example: 25,42,44,15,25\n")
 
         user_data = input('Enter data here: ')
         input_data = user_data.split(',')
-    
+
         if validate_data(input_data):
             print(f'Confirmation of data: {input_data}')
             break
-    
+
     return input_data
 
 
 def validate_data(values):
     """
-    Converts values into integers. 
-    Raising ValueError if values cannot be converted or there are not exactly 5 values.
+    Converts values into integers.
+    Raising ValueError if values cannot be converted 
+    or there are not exactly 5 values.
     """
     try:
-        [int(value) for value in values]
         if len(values) != 5:
-            raise ValueError(
-                f'Exactly 5 values are required.'
-            )
+            raise ValueError('Exactly 5 values are required.')
     except ValueError as error:
         print(f'Invalid entry: {error} - Please try again!')
         return False
-    
+
     return True
 
 
@@ -59,13 +59,17 @@ def update_worksheet(data, worksheet):
     updating_worksheet.append_row(data)
     print(f'{worksheet} worksheet successfully updated!\n')
 
-# def calculate_percentage():
-#     """
-#     Pulls percentage change data from worksheet and display it to the user.
-#     """
-#     percentage_data = SHEET.worksheet('PercentageChange').get_all_values()
-#     percentage_to_display = percentage_data[-1]
-#     print(f'The over all percentage fluctation across all teams is {percentage_to_display}')
+
+def calculate_percentage():
+    """
+    Pulls percentage change data from worksheet and display it to the user.
+    """
+    percentage_data = SHEET.worksheet('PercentageChange').get_all_values()
+    percentage_to_display = percentage_data[-2]
+
+    print('The overall percentage fluctation across all')
+    print(f'teams is {percentage_to_display}')
+
 
 def run_program():
     """
