@@ -54,10 +54,10 @@ def update_worksheet(data, worksheet):
     """
     Updates worksheet with data input by the user.
     """
-    print('Updating worksheet with data provided...')
+    print('Updating worksheet...')
     updating_worksheet = SHEET.worksheet(worksheet)
     updating_worksheet.append_row(data)
-    print(f'{worksheet} worksheet successfully updated!\n')
+    print(f'{worksheet} worksheet successfully updated with new data!\n')
 
 
 def calculate_percentage():
@@ -68,7 +68,36 @@ def calculate_percentage():
     percentage_to_display = percentage_data[-2]
 
     print('The overall percentage fluctation across all')
-    print(f'teams is {percentage_to_display}')
+    print(f'teams is {percentage_to_display}\n')
+
+
+def get_column_value():
+    """
+    Gets values from 'SUM' column, ready for calculation for projected data. 
+    """
+    values_list = SHEET.worksheet('TeamData')
+
+    column_value = []
+    column = values_list.col_values(6)
+    column_value.append(column[-5:])
+    return column_value
+
+
+def  calculate_projected_data(data):
+    """
+    Performs calculation for next months projected data.
+    """
+    print("Calculating next months projected data...")
+    new_data = []
+
+    for row in data:
+        int_row = [int(num) for num in row]
+        average = sum(int_row) / len(int_row)
+        new_data.append(round(average))
+
+    update_worksheet(new_data, 'ProjectedData')    
+
+    print(f'Next months projected data for all teams is {new_data}')
 
 
 def run_program():
@@ -80,6 +109,7 @@ def run_program():
     input_data = [int(num) for num in data]
     update_worksheet(input_data, "TeamData")
     calculate_percentage()
-
-
+    projected_data_to_display = get_column_value()
+    calculate_projected_data(projected_data_to_display)
+    
 run_program()
