@@ -73,7 +73,7 @@ def calculate_percentage():
 
 def get_column_value():
     """
-    Gets values from 'SUM' column, ready for calculation for projected data. 
+    Gets values from 'SUM' column, ready for calculation for projected data.
     """
     values_list = SHEET.worksheet('TeamData')
 
@@ -83,7 +83,7 @@ def get_column_value():
     return column_value
 
 
-def  calculate_projected_data(data):
+def calculate_projected_data(data):
     """
     Performs calculation for next months projected data.
     """
@@ -95,21 +95,25 @@ def  calculate_projected_data(data):
         average = sum(int_row) / len(int_row)
         new_data.append(round(average))
 
-    update_worksheet(new_data, 'ProjectedData')    
+    update_worksheet(new_data, 'ProjectedData')
 
-    print(f'Next months projected data for all teams is {new_data}')
+    print(f'Next months projected data for all teams is {new_data}\n')
 
 
 def run_program():
     """
     Runs all functions.
     """
-    print('Welcome to my Python Project...\n')
     data = collect_data()
     input_data = [int(num) for num in data]
     update_worksheet(input_data, "TeamData")
     calculate_percentage()
     projected_data_to_display = get_column_value()
-    calculate_projected_data(projected_data_to_display)
-    
-run_program()
+    calculate_projected_data(projected_data_to_display)    
+
+print('Welcome to my Python Project...\n')
+while True:
+    start = input("press enter/return to start or enter exit to quit: ")
+    if start == 'exit':
+        break
+    run_program()
