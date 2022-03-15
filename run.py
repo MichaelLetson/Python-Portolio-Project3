@@ -24,7 +24,7 @@ def collect_data():
         print("Don't forget to separate each piece of data with a comma.")
         print("For example: 25,42,44,15,25\n")
 
-        user_data = input('Enter data here: ')
+        user_data = input('Enter data here: \n')
         input_data = user_data.split(',')
 
         if validate_data(input_data):
@@ -98,7 +98,7 @@ def calculate_projected_data(data):
 
         update_worksheet(new_data, 'ProjectedData')
 
-        next_months_data = input("Would you like to see next months projected data? Enter yes/no: ")
+        next_months_data = input("Would you like to see next months projected data? Enter yes/no: \n")
         if next_months_data == 'no':
             break
 
@@ -115,11 +115,11 @@ def run_program():
     update_worksheet(input_data, "TeamData")
     calculate_percentage()
     projected_data_to_display = get_column_value()
-    calculate_projected_data(projected_data_to_display)    
+    calculate_projected_data(projected_data_to_display)
 
 print('Welcome to my Python Project...\n')
 while True:
-    start = input("Press enter/return to start or enter exit to quit: ")
+    start = input("Press enter/return to start or enter exit to quit: \n")
     if start == 'exit':
         break
     run_program()
