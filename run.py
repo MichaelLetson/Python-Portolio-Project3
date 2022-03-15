@@ -19,7 +19,7 @@ def collect_data():
     returns confirmation of data.
     """
     while True:
-        print('Please enter each teams data from the last calendar')
+        print('\nPlease enter each teams data from the last calendar')
         print('month, starting with team 1.')
         print("Don't forget to separate each piece of data with a comma.")
         print("For example: 25,42,44,15,25\n")
@@ -87,17 +87,23 @@ def calculate_projected_data(data):
     """
     Performs calculation for next months projected data.
     """
-    print("Calculating next months projected data...")
-    new_data = []
+    while True:
+        print("Calculating next months projected data...")
+        new_data = []
 
-    for row in data:
-        int_row = [int(num) for num in row]
-        average = sum(int_row) / len(int_row)
-        new_data.append(round(average))
+        for row in data:
+            int_row = [int(num) for num in row]
+            average = sum(int_row) / len(int_row)
+            new_data.append(round(average))
 
-    update_worksheet(new_data, 'ProjectedData')
+        update_worksheet(new_data, 'ProjectedData')
 
-    print(f'Next months projected data for all teams is {new_data}\n')
+        next_months_data = input("Would you like to see next months projected data? Enter yes/no: ")
+        if next_months_data == 'no':
+            break
+
+        print(f'Next months projected data for all teams is {new_data}\n')
+        break
 
 
 def run_program():
@@ -113,7 +119,7 @@ def run_program():
 
 print('Welcome to my Python Project...\n')
 while True:
-    start = input("press enter/return to start or enter exit to quit: ")
+    start = input("Press enter/return to start or enter exit to quit: ")
     if start == 'exit':
         break
     run_program()
