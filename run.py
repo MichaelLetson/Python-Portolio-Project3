@@ -37,7 +37,7 @@ def collect_data():
 def validate_data(values):
     """
     Converts values into integers.
-    Raising ValueError if values cannot be converted 
+    Raising ValueError if values cannot be converted
     or there are not exactly 5 values.
     """
     try:
@@ -98,7 +98,8 @@ def calculate_projected_data(data):
 
         update_worksheet(new_data, 'ProjectedData')
 
-        next_months_data = input("Would you like to see next months projected data? Enter yes/no: \n")
+        next_months_data = input("Would you like to see next months\
+             projected data? Enter yes/no: \n")
         if next_months_data == 'no':
             break
 
