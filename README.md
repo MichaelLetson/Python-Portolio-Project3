@@ -6,6 +6,19 @@
 
 This is for a real world scenario of inputting team data into a spreadsheet, having the option to gain insights and retain/calculate key data. Visit the deployed Heroku page here: https://python-portfolio-project3.herokuapp.com/ 
 
+## Purpose & Features
+
+The purpose of the program is to help automate the process of inputting and interacting with data created by 5 teams, into a spreadsheet. I have taken this from personal experiences where this program would have been useful. 
+- It speeds up the process of updating a spreadsheet with data.
+- The program calculates and displays the percentage increase or decrease of the teams activity. 
+- The program calculates and offers the option to view next months projected data - this is done to create more engagement between the user and the program. 
+
+This is interaction with Python and Google Sheets is done via creating an API to allow the code to interact with a google sheet via a gspread import.
+
+To follow a plan of creating this program I created a flow chart through diagrams.net: 
+![image](https://user-images.githubusercontent.com/93741957/158696173-02e54fd0-48f7-4783-910f-59221fdf4098.png)
+
+
 ## Testing
 
 ![image](https://user-images.githubusercontent.com/93741957/158692261-47858492-5c08-4e4b-8848-b85d3f7afa0c.png)
