@@ -33,6 +33,14 @@ This program definitely has room to be expanded upon. I feel depending on busine
  The commit messages display errors, such as misplaced letters and spelling mistakes. This is due to computer glitches when typing in the commit messages in the terminal. 
  Chose to leave the errors in place, rather than risk losing work by editing the commits. 
  
+ ## Deployment
+ 
+ This project was deployed via Heroku.
+ - Create Heroku account on app. 
+ - Set buildbacks to Python and NodeJS, in that order. 
+ - Link Heroku to Git repository. 
+ - Deployed.
+ 
  ## Using Git
 
 I created a respository and opened in gitpod to create my code. To move my code from gitpod to repository ready for deployment I followed these steps (which I did often to show a journey of creating my site): 
