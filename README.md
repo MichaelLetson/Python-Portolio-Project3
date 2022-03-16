@@ -31,3 +31,11 @@ To follow a plan of creating this program I created a flow chart through diagram
  ### Known bugs:
  The commit messages display errors, such as misplaced letters and spelling mistakes. This is due to computer glitches when typing in the commit messages in the terminal. 
  Chose to leave the errors in place, rather than risk losing work by editing the commits. 
+ 
+ ## Using Git
+
+I created a respository and opened in gitpod to create my code. To move my code from gitpod to repository ready for deployment I followed these steps (which I did often to show a journey of creating my site): 
+ - git add .
+ - git commit -m "message"
+ - git push
+ - git pull --rebase
