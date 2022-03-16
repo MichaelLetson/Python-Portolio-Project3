@@ -18,6 +18,7 @@ This is interaction with Python and Google Sheets is done via creating an API to
 To follow a plan of creating this program I created a flow chart through diagrams.net: 
 ![image](https://user-images.githubusercontent.com/93741957/158696173-02e54fd0-48f7-4783-910f-59221fdf4098.png)
 
+This program definitely has room to be expanded upon. I feel depending on business requirements and team data, the functions are coded in a way to be reused as part of any future development to accomodate for various requirements from the user. 
 
 ## Testing
 
