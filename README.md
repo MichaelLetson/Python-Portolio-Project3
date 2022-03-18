@@ -9,8 +9,8 @@ This is for a real world scenario of inputting team data into a spreadsheet, hav
 ## Purpose & Features
 
 The purpose of the program is to help automate the process of inputting and interacting with data created by 5 teams, into a spreadsheet. I have taken this from personal experiences where this program would have been useful. 
-- It speeds up the process of updating a spreadsheet with data.
-- The program calculates and displays the percentage increase or decrease of the teams activity. 
+- The program speeds up the process of updating a spreadsheet with data.
+- The program calculates and displays the percentage increase or decrease of the teams activity (displayed as positive or negative numbers). 
 - The program calculates and offers the option to view next months projected data - this is done to create more engagement between the user and the program. 
 
 This interaction with Python and Google Sheets is done via creating an API to allow the code to interact with a google sheet via a gspread import.
