@@ -13,7 +13,7 @@ The purpose of the program is to help automate the process of inputting and inte
 - The program calculates and displays the percentage increase or decrease of the teams activity. 
 - The program calculates and offers the option to view next months projected data - this is done to create more engagement between the user and the program. 
 
-This is interaction with Python and Google Sheets is done via creating an API to allow the code to interact with a google sheet via a gspread import.
+This interaction with Python and Google Sheets is done via creating an API to allow the code to interact with a google sheet via a gspread import.
 
 To follow a plan of creating this program I created a flow chart through diagrams.net: 
 ![image](https://user-images.githubusercontent.com/93741957/158696173-02e54fd0-48f7-4783-910f-59221fdf4098.png)
